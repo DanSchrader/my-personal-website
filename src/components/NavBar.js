@@ -40,5 +40,8 @@ margin: 0;
 padding: 0;
 font-size: 200%;
 font-weight: 300;
-text-align: center;
+
+@media screen and (max-width: 960px) {
+    font-size: 150%;
+}
 `
