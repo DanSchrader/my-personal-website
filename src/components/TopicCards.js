@@ -7,10 +7,11 @@ const [showTopic, setShowTopic] = useState(false);
 const [topicList, setTopicList] = useState(data);
 
     return (
-        <TopicCardList>
+        <TopicCardWrapper>
+        <TopicButtonList>
             {topicList.map(({ _id, button, src, alt, title, text }) => {
                 return (
-                    <TopicCardItem key={_id}>
+                    <TopicButtonItem key={_id}>
                         <CardButtonOpen isShown={showTopic} onClick={() => {
                              setTopicList((topicList) =>
                              topicList.filter(
@@ -19,7 +20,14 @@ const [topicList, setTopicList] = useState(data);
                            );
                             setShowTopic(!showTopic);
                         }}>{button}</CardButtonOpen>
-                        <HiddenWrapper isShown={showTopic}>
+                        </TopicButtonItem>
+                )
+            })}
+        </TopicButtonList>
+                        <CardList isShown={showTopic}>
+                        {topicList.map(({ src, alt, title, text }) => {
+                return (
+                        <CardItem>
                         <CardImage src={src} alt={alt} />
                         <CardTitle>{title}</CardTitle>
                         <CardText>{text.p1}</CardText>
@@ -33,25 +41,35 @@ const [topicList, setTopicList] = useState(data);
                             setTopicList(data);
                         }}>
                             X</CardButtonClose>
-                        </HiddenWrapper>
-                    </TopicCardItem>
-                )
-            })}
-        </TopicCardList>
+                            </CardItem>
+                )})}
+                        </CardList>
+                    
+        </TopicCardWrapper>
     )
 }
 
-const TopicCardList = styled.ul`
+const TopicCardWrapper = styled.div`
 display: grid;
-list-style: none;
-padding: 0;
-margin: 75px 0 0 0;
-justify-self: center;
-gap: 20px;
 position: relative;
 `
 
-const TopicCardItem = styled.li`
+const TopicButtonList = styled.ul`
+display: grid;
+list-style: none;
+padding: 0;
+margin: 50px 0 0 0;
+justify-self: center;
+gap: 20px;
+position: relative;
+
+@media screen and (max-width: 960px) {
+    margin: 40px 0 0 0;
+    gap: 15px;
+}
+`
+
+const TopicButtonItem = styled.li`
 display: grid;
 gap: 15px;
 position: relative;
@@ -64,40 +82,72 @@ border-radius: 5px;
 color: #dcdcdc;
 font-size: 150%;
 font-weight: 300;
-width: 15vw;
-height: 15vw;
-padding: 30px;
+width: 25vw;
+height: 10vw;
+padding: 10px;
+opacity: 1;
+transition: all 0.5s ease;
+
+@media screen and (max-width: 960px) {
+    font-size: 120%;
+    width: 80vw;
+    height: 15vw;
+}
 
 ${(props) =>
     props.isShown &&
     css`
-      display: none;
+      opacity: 0;
+    transition: all 0.5s ease;
     `}
 `
 
-const HiddenWrapper = styled.div`
-display: none;
+const CardList = styled.ul`
+list-style: none;
+padding: 0;
+margin: 0;
+display: grid;
 opacity: 0;
 transition: all 0.5s ease;
 position: absolute;
 width: 25vw;
+left: -100vw;
+top: 50px;
+
+@media screen and (max-width: 960px) {
+    width: 80vw;
+    left: -100vw;
+}
 
 ${(props) =>
     props.isShown &&
     css`
-      display: grid;
       opacity: 1;
       transition: all 0.5s ease;
       z-index: 1;
       gap: 15px;
       left: -12.5vw;
+
+      @media screen and (max-width: 960px) {
+        left: 0;
+}
     `}
 `;
+
+const CardItem = styled.li`
+display: grid;
+gap: 15px;
+`
 
 
 const CardImage = styled.img`
 width: 25vw;
 justify-self: center;
+border-radius: 5px;
+
+@media screen and (max-width: 960px) {
+    width: 75vw;
+}
 `
 
 const CardTitle = styled.h2`
