@@ -13,7 +13,7 @@ export default function App() {
 
 const AppContainer = styled.div`
 display: grid;
-padding: 10px;
+padding: 20px;
 width: 100vw;
 justify-content: center;
 `
