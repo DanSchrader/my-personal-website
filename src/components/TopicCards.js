@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import data from '../data/data';
 import { useState } from 'react';
+import { FaTimes } from "react-icons/fa";
 
 export default function TopicCards () {
 const [showTopic, setShowTopic] = useState(false);
@@ -9,7 +10,7 @@ const [topicList, setTopicList] = useState(data);
     return (
         <TopicCardWrapper>
         <TopicButtonList>
-            {topicList.map(({ _id, button, src, alt, title, text }) => {
+            {topicList.map(({ _id, button }) => {
                 return (
                     <TopicButtonItem key={_id}>
                         <CardButtonOpen isShown={showTopic} onClick={() => {
@@ -24,10 +25,10 @@ const [topicList, setTopicList] = useState(data);
                 )
             })}
         </TopicButtonList>
-                        <CardList isShown={showTopic}>
-                        {topicList.map(({ src, alt, title, text }) => {
+        <CardList isShown={showTopic}>
+            {topicList.map(({ _id, src, alt, title, text }) => {
                 return (
-                        <CardItem>
+                    <CardItem key={_id}>
                         <CardImage src={src} alt={alt} />
                         <CardTitle>{title}</CardTitle>
                         <CardText>{text.p1}</CardText>
@@ -40,7 +41,8 @@ const [topicList, setTopicList] = useState(data);
                             setShowTopic(false);
                             setTopicList(data);
                         }}>
-                            X</CardButtonClose>
+                            <CloseIcon />
+                        </CardButtonClose>
                             </CardItem>
                 )})}
                         </CardList>
@@ -60,11 +62,14 @@ list-style: none;
 padding: 0;
 margin: 50px 0 0 0;
 justify-self: center;
+grid-template-columns: 1fr 1fr;
+justify-items: center;
 gap: 20px;
 position: relative;
 
 @media screen and (max-width: 960px) {
     margin: 40px 0 0 0;
+    grid-template-columns: 1fr;
     gap: 15px;
 }
 `
@@ -87,6 +92,7 @@ height: 10vw;
 padding: 10px;
 opacity: 1;
 transition: all 0.5s ease;
+cursor: pointer;
 
 @media screen and (max-width: 960px) {
     font-size: 120%;
@@ -110,7 +116,7 @@ display: grid;
 opacity: 0;
 transition: all 0.5s ease;
 position: absolute;
-width: 25vw;
+width: 50vw;
 left: -100vw;
 top: 50px;
 
@@ -126,7 +132,7 @@ ${(props) =>
       transition: all 0.5s ease;
       z-index: 1;
       gap: 15px;
-      left: -12.5vw;
+      left: 0;
 
       @media screen and (max-width: 960px) {
         left: 0;
@@ -136,17 +142,21 @@ ${(props) =>
 
 const CardItem = styled.li`
 display: grid;
-gap: 15px;
+gap: 25px;
+
+@media screen and (max-width: 960px) {
+    gap: 15px;
+}
 `
 
 
 const CardImage = styled.img`
 width: 25vw;
+border-radius: 50%;
 justify-self: center;
-border-radius: 5px;
 
 @media screen and (max-width: 960px) {
-    width: 75vw;
+    width: 50vw;
 }
 `
 
@@ -154,6 +164,8 @@ const CardTitle = styled.h2`
 font-size: 150%;
 font-weight: 300;
 margin: 0;
+padding: 0 0 5px 0;
+border-bottom: solid 1px #009FE3;
 `
 
 const CardText = styled.p`
@@ -170,12 +182,14 @@ border: none;
 padding: 0;
 border-radius: 5px;
 color: #dcdcdc;
-font-size: 200%;
-font-weight: 300;
-text-align: center;
 position: absolute;
-top: -50px;
-right: -15px;
+right: -10px;
+top: -10px;
 height: 48px;
 width: 48px;
+cursor: pointer;
+`
+
+const CloseIcon = styled(FaTimes)`
+font-size: 300%;
 `
