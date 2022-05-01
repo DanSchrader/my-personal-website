@@ -143,6 +143,7 @@ ${(props) =>
 const CardItem = styled.li`
 display: grid;
 gap: 25px;
+padding-bottom: 20px;
 
 @media screen and (max-width: 960px) {
     gap: 15px;
