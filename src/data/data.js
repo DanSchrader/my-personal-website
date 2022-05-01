@@ -1,8 +1,8 @@
 import ImagePerson from "../images/daniel-schrader-2022.png";
 import ImageInterests from "../images/reaper-281.png";
-import LogoBD from '../images/beerserker-design-logo.svg';
+import LogoBD from '../images/beerserker-design-logo-rund.svg';
 import LogoBP from '../images/beerserker-productions-logo.svg';
-import LogoBI from '../images/burns-iceman-logo.svg';
+import LogoBI from '../images/burns-iceman-logo-rund.svg';
 
 const data = [
     {
@@ -17,7 +17,7 @@ const data = [
             p3: "For 15 years I funded my self-education and start-up years as a barkeeper. That also meant a lot of fun and satisfied my interests in haptic work with ingredients.",
             p4: "Like for many others my situation changed with the upcoming pandemic. I wanted to learn something new and focus on the right things.",
             p5: "Finally I decided to learn how to code from the beginning and gratuated a Web Development Bootcamp at neuefische. Here I am now: A junior frontend developer.",
-            p6: "Where do I see myself in 5 years? - In a tiny house in the middle of a chili forest as a senior full-stack developer.",
+            p6: "Where do I see myself in 5 years? - In a tiny house in the middle of a chili forest as a full-stack developer.",
         },
     },
     {
@@ -27,10 +27,10 @@ const data = [
         alt: "Beerserker-Design-Logo",
         title: "Beerserker Design",
         text: {
-            p1: "Beerserker Design is nothing more than a collection of my skills and working experiences at the moment.",
-            p2: "Since I started coding as a Trainee Web Developer at neuefische I learned many helpful things for a modern working environment. We learned the Git- and GitHub-Workflow as well as pair- and mob-programming.",
-            p3: "We also got in touch with Storybook, React-Testing-Library and Scrum. After introductions to HTML, CSS and Java Script (vanilla) the bootcamp focused on React and Styled-Components.",
-            p4: "React-Router, Vercel Deployment, API-fetching and Backend with MongoDB were also very handy things, we learned to implement into our projects.",
+            p1: "Beerserker Design is an overview about my skills and working experiences at the moment. Design experience turned out to be very useful for UI-Development and it's preparation with Figma oder Adobe UX.",
+            p2: "Since I started coding as a Trainee Web Developer at neuefische I learned many helpful things for a modern working environment like Git- and GitHub-workflow as well as pair- and mob-programming.",
+            p3: "I also got in touch with Storybook, React-Testing-Library and Scrum. After introductions to HTML, CSS and Java Script (vanilla) the bootcamp focused on React and Styled-Components.",
+            p4: "React-Router, Vercel Deployment, API-fetching and small backends with MongoDB were also very handy things, I learned to integrate into projects.",
             
         },
     },
