@@ -27,7 +27,7 @@ const data = [
         alt: "Beerserker-Design-Logo",
         title: "Beerserker Design",
         text: {
-            p1: "Beerserker Design is an overview about my skills and working experiences at the moment. Design experience turned out to be very useful for UI-Development and it's preparation with Figma oder Adobe UX.",
+            p1: "Beerserker Design is an overview about my skills and working experience at the moment. Design experience turned out to be very useful for UI-Development and it's preparation with Figma or Adobe UX.",
             p2: "Since I started coding as a Trainee Web Developer at neuefische I learned many helpful things for a modern working environment like Git- and GitHub-workflow as well as pair- and mob-programming.",
             p3: "I also got in touch with Storybook, React-Testing-Library and Scrum. After introductions to HTML, CSS and Java Script (vanilla) the bootcamp focused on React and Styled-Components.",
             p4: "React-Router, Vercel Deployment, API-fetching and small backends with MongoDB were also very handy things, I learned to integrate into projects.",
@@ -65,7 +65,7 @@ const data = [
         title: "Interests",
         text: {
             p1: "My guilty passion #1 are chilis. The hotter, the better. I must confess, I got a little addicted to Capsaicin over the last years.",
-            p2: "I love to watch them grow, eat them fresh or make lovely hot seasonings and hot sauces. There is almost no food, that's better when it's not hot - in my opinion.",
+            p2: "I love to watch them grow, eat them fresh or make lovely hot seasonings and hot sauces. Yes, I love salad - if it's hot.",
             p3: "My other interests are cooking, BBQ, metal, festivals and concerts, camping, tabletop games, fantasy and ancient myths.",
         },
     },
